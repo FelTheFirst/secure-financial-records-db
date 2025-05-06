@@ -18,33 +18,33 @@ The database consists of five core tables:
 
 The relationship between the tables is as follows:
 
-[users]
- ├── user_id (PK)
- ├── username
- ├── password_hash
- ├── full_name
- ├── email
- ├── phone_number
- ├── address
- ├── user_role
- ├── created_at
- └── updated_at
+[users] <br>
+ ├── user_id (PK) <br>
+ ├── username <br> 
+ ├── password_hash <br>
+ ├── full_name <br>
+ ├── email <br>
+ ├── phone_number <br>
+ ├── address <br>
+ ├── user_role <br>
+ ├── created_at <br>
+ └── updated_at <br>
 
    ↓ 1-to-Many
 
-[accounts]
- ├── account_id (PK)
- ├── user_id (FK → users.user_id)
- ├── account_number
- ├── account_type
- ├── balance
- ├── currency
- ├── created_at
- └── updated_at
+[accounts] <br>
+ ├── account_id (PK) <br>
+ ├── user_id (FK → users.user_id) <br>
+ ├── account_number <br>
+ ├── account_type <br>
+ ├── balance <br>
+ ├── currency <br> 
+ ├── created_at <br> 
+ └── updated_at <br>
 
   ↓ 1-to-Many (Self-Join via transactions)
 
-[transactions]
+[transactions] <br>
  ├── transaction_id (PK)
  ├── source_account_id (FK → accounts.account_id)
  ├── destination_account_id (FK → accounts.account_id)
@@ -55,20 +55,20 @@ The relationship between the tables is as follows:
 
   ↓ 1-to-Many
 
-[audit_log]
- ├── log_id (PK)
- ├── user_id (FK → users.user_id)
- ├── action
- ├── table_name
- ├── record_id
- ├── timestamp
- └── description
+[audit_log] <br>
+ ├── log_id (PK) <br>
+ ├── user_id (FK → users.user_id) <br>
+ ├── action <br>
+ ├── table_name <br>
+ ├── record_id <br>
+ ├── timestamp <br>
+ └── description <br>
 
 no related FK <br>
-[compliance_checks]
- ├── check_id (PK)
- ├── regulation
- ├── description
- ├── related_table
- └── created_at
+[compliance_checks] <br>
+ ├── check_id (PK) <br>
+ ├── regulation <br>
+ ├── description <br>
+ ├── related_table <br>
+ └── created_at <br>
 

@@ -45,13 +45,13 @@ The relationship between the tables is as follows:
   ↓ 1-to-Many (Self-Join via transactions)
 
 [transactions] <br>
- ├── transaction_id (PK)
- ├── source_account_id (FK → accounts.account_id)
- ├── destination_account_id (FK → accounts.account_id)
- ├── amount
- ├── transaction_type
- ├── transaction_date
- └── description
+ ├── transaction_id (PK) <br>
+ ├── source_account_id (FK → accounts.account_id) <br>
+ ├── destination_account_id (FK → accounts.account_id) <br>
+ ├── amount <br>
+ ├── transaction_type <br>
+ ├── transaction_date <br>
+ └── description <br>
 
   ↓ 1-to-Many
 
